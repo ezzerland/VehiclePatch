@@ -1,0 +1,7 @@
+name: VehiclePatch
+version: 1.0.0
+main: ezzerland.ravenloftmc.VehiclePatch
+load: POSTWORLD
+description: "Stops players from entering vehicles beyond world border"
+depend: [WorldBorder]
+author: Ezzerland
