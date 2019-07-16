@@ -1,5 +1,6 @@
 package ezzerland.ravenloftmc;
 
+import org.bukkit.Location;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.vehicle.VehicleEnterEvent;
@@ -15,7 +16,8 @@ public class VehiclePatch extends JavaPlugin implements Listener
   @EventHandler
   public void enterVehicle(VehicleEnterEvent e)
   {
-    BorderData border = Config.Border(e.getVehicle().getLocation().getWorld().getName());
-    if ((border != null) && (!border.insideBorder(e.getVehicle().getLocation()))) { e.setCancelled(true); return; }
+    Location vehicle = e.getVehicle().getLocation();
+    BorderData border = Config.Border(vehicle.getWorld().getName());
+    if ((border != null) && (!border.insideBorder(vehicle))) { e.setCancelled(true); return; }
   }
 }
